@@ -1,48 +1,22 @@
-### Infos
+## Related links
 
-- [Docker Hub fah-gpu](https://hub.docker.com/r/foldingathome/fah-gpu#example-config-files)
-- [worldgint Donor Statistics](https://stats.foldingathome.org/donor/id/677134766)
+- [Official Docker Hub fah-gpu](https://hub.docker.com/r/foldingathome/fah-gpu)
 - [Troubleshooting](https://foldingathome.org/support/faq/troubleshooting/)
+- [Docker Hub Image - cgint/fah-gpu-cuda-11.7.1-base-ubuntu22.04](https://hub.docker.com/repository/docker/cgint/fah-gpu-cuda-11.7.1-base-ubuntu22.04/general)
+- [My 'worldgint' Donor Statistics](https://stats.foldingathome.org/donor/id/677134766)
 
-## Docker setup
-Single Machine Setup
-Once the prerequisites are met, it's time to run the container.
+# Why this repo ?
+I wanted to have a dockerized version of Folding At Home that I can easily setup again on a machine using NVIDIA-GPU.
 
-See [example config files](https://hub.docker.com/r/foldingathome/fah-gpu#example-config-files) and be sure to set your user/passkey/team.
+As I found a fix from https://github.com/sanori I wanted to make the work i invested available to people and ideally also help others to make use of a complete Docker-Setup for them.
 
-### Make a directory for persistent storage
-mkdir $HOME/fah
+## Ease of dockerized Folding At Home - Setup
 
-#### Edit config.xml based on an example config below, use vi or other editor.
-vi $HOME/fah/config.xml
+The official version of [FAH-Docker-Image](https://hub.docker.com/r/foldingathome/fah-gpu) did not work for me as I faced the issue described as [Core 0x23 stalled on current (21.11.0) image](https://github.com/FoldingAtHome/containers/issues/31) on Github.
 
-## Docker run, watch and control on a Single Machine
+Thankfully https://github.com/sanori provided a patch that made things work.
 
-### Run container with GPUs, name it "fah0", map user and /fah volume
-```
-docker run --gpus all --name fah0 -d --user "$(id -u):$(id -g)" \
-  --volume $HOME/fah:/fah fah-gpu:VERSION
-```
+And here is the result of a docker-image based on the updated version of the Dockerfile using hat fix ([Github-Repo](https://github.com/cgint/fah-gpu-docker)).
+The PR from `sanori` is not yet part of an official image from `foldingathome`.
 
-### Monitoring Logs on a Single Machine
-
-```
-# Dump output so far this run
-docker logs fah0
-
-# Tail the log
-
-docker logs -f fah0
-```
-
-### Stopping Container on a Single Machine
-
-```
-# Stop container once Work Units finish (preferred), may take hours
-docker exec fah0 FAHClient --send-command finish
-
-# Stop container after checkpoint, usually under 30 seconds.
-# Be sure to start it again to let it finish before the Work Units expire.
-docker exec fah0 FAHClient --send-command shutdown
-# The container can also just be killed, but that's not as nice.
-```
+See infos regarding setup in the official repo at FAH-Docker-Image](https://hub.docker.com/r/foldingathome/fah-gpu) and maybe additionally helpful my collected infos under [https://github.com/cgint/fah-gpu-docker/docs](https://github.com/cgint/fah-gpu-docker/tree/main/docs)
