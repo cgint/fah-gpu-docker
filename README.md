@@ -10,6 +10,8 @@ I wanted to have a dockerized version of Folding At Home that I can easily setup
 
 As I found a fix from https://github.com/sanori I wanted to make the work i invested available to people and ideally also help others to make use of a complete Docker-Setup for them.
 
+You can find the resulting Docker Image here: [Docker Hub Image - cgint/fah-gpu-cuda-11.7.1-base-ubuntu22.04](https://hub.docker.com/repository/docker/cgint/fah-gpu-cuda-11.7.1-base-ubuntu22.04/general)
+
 ## Ease of dockerized Folding At Home - Setup
 
 The official version of [FAH-Docker-Image](https://hub.docker.com/r/foldingathome/fah-gpu) did not work for me as I faced the issue described as [Core 0x23 stalled on current (21.11.0) image](https://github.com/FoldingAtHome/containers/issues/31) on Github.
