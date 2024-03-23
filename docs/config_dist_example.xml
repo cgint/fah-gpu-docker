@@ -11,7 +11,7 @@
   -->
 
   <!-- User Information -->
-  <user value="worldgint"/> <!-- Enter your user name here -->
+  <user value="-----user-----"/> <!-- Enter your user name here -->
   <team value="0"/>         <!-- Your team number -->
   <passkey value=""/>       <!-- 32 hexadecimal characters if provided -->
 
