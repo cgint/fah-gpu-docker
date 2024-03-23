@@ -1,0 +1,21 @@
+version: '3'
+services:
+  fah-gpu:
+    container_name: fah-gpu
+    image: cgint/fah-gpu-cuda-11.7.1-base-ubuntu22.04
+    build: docker/
+    ports:
+      - "7401:7396"
+      - "36331:36330"
+    volumes:
+      - ./fah_data:/fah
+    user: "1000:1000" # group and user id of the user running the container
+    ipc: host
+    deploy:
+      resources:
+        reservations:
+          devices:
+            - driver: nvidia
+              count: "all"
+              capabilities: [gpu]
+

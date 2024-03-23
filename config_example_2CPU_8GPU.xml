@@ -1,0 +1,30 @@
+<config>
+  <!-- Set with your user, passkey, team-->
+  <user value="Anonymous"/>
+  <passkey value=""/>
+  <team value="0"/>
+
+  <power value="full"/>
+  <exit-when-done v='true'/>
+
+  <web-enable v='false'/>
+  <disable-viz v='true'/>
+  <gui-enabled v='false'/>
+
+  <!-- 8 slots for GPUs -->
+  <slot id='0' type='GPU'> </slot>
+  <slot id='1' type='GPU'> </slot>
+  <slot id='2' type='GPU'> </slot>
+  <slot id='3' type='GPU'> </slot>
+  <slot id='4' type='GPU'> </slot>
+  <slot id='5' type='GPU'> </slot>
+  <slot id='6' type='GPU'> </slot>
+  <slot id='7' type='GPU'> </slot>
+
+  <!-- 80-8= 72/4 = 18 = 2*3*3 to allow for NUMA domains and decomposition -->
+  <slot id='8' type='SMP'> <cpus v='18'/> </slot>
+  <slot id='9' type='SMP'> <cpus v='18'/> </slot>
+  <slot id='10' type='SMP'> <cpus v='18'/> </slot>
+  <slot id='11' type='SMP'> <cpus v='18'/> </slot>
+
+</config>
