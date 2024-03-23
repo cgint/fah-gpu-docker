@@ -2,7 +2,7 @@
 
 - [Official Docker Hub fah-gpu](https://hub.docker.com/r/foldingathome/fah-gpu)
 - [Troubleshooting](https://foldingathome.org/support/faq/troubleshooting/)
-- [Docker Hub Image - cgint/fah-gpu-cuda-11.7.1-base-ubuntu22.04](https://hub.docker.com/repository/docker/cgint/fah-gpu-cuda-11.7.1-base-ubuntu22.04/general)
+- [Docker Hub Image - cgint/fah-gpu-cuda-11.7.1-base-ubuntu22.04](https://hub.docker.com/repository/docker/cgint/fah-gpu-cuda-11.7.1-base-ubuntu22.04)
 - [My 'worldgint' Donor Statistics](https://stats.foldingathome.org/donor/id/677134766)
 
 # Why this repo ?
@@ -10,7 +10,7 @@ I wanted to have a dockerized version of Folding At Home that I can easily setup
 
 As I found a fix from https://github.com/sanori I wanted to make the work i invested available to people and ideally also help others to make use of a complete Docker-Setup for them.
 
-You can find the resulting Docker Image here: [Docker Hub Image - cgint/fah-gpu-cuda-11.7.1-base-ubuntu22.04](https://hub.docker.com/repository/docker/cgint/fah-gpu-cuda-11.7.1-base-ubuntu22.04/general)
+You can find the resulting Docker Image here: [Docker Hub Image - cgint/fah-gpu-cuda-11.7.1-base-ubuntu22.04](https://hub.docker.com/repository/docker/cgint/fah-gpu-cuda-11.7.1-base-ubuntu22.04)
 
 ## Ease of dockerized Folding At Home - Setup
 
